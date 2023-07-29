@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ControlSquare.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid BackgroundColor="Red">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <BoxView
+            x:Name="BoxView"
+            Grid.Row="0"
+            HeightRequest="{Binding Source={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=Width}"
+            Color="Blue" />
+
+        <Label Grid.Row="1" Text="{Binding Source={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=Width, StringFormat='{0}'}" />
+
+        <Button
+            Grid.Row="2"
+            Clicked="Button_OnClicked"
+            Text="Debug" />
+    </Grid>
+
+</ContentPage>
